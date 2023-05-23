@@ -47,6 +47,8 @@ text = "I have an apple"  # 텍스트에서 패턴을 대체할 문자열
 replaced_text = re.sub(pattern, "orange", text)  # 정규 표현식과 문자열을 비교하여 패턴을 대체
 print(replaced_text)
 
+python'''
+
 - 패턴 매칭: re.search() 함수를 사용하여 주어진 텍스트에서 패턴을 검사합니다. 매칭 결과를 반환하고 매칭 여부를 확인합니다.
 - 패턴 추출: 괄호 ()를 사용하여 부분 패턴을 그룹화합니다. match.group() 함수를 사용하여 추출된 패턴을 확인합니다.
 - 패턴 대체: re.sub() 함수를 사용하여 주어진 텍스트에서 패턴을 찾아 다른 문자열로 대체합니다.
