@@ -47,7 +47,41 @@ text = "I have an apple"  # 텍스트에서 패턴을 대체할 문자열
 replaced_text = re.sub(pattern, "orange", text)  # 정규 표현식과 문자열을 비교하여 패턴을 대체
 print(replaced_text)
 
-패턴 매칭: re.search() 함수를 사용하여 주어진 텍스트에서 패턴을 검사합니다. 매칭 결과를 반환하고 매칭 여부를 확인합니다.
-패턴 추출: 괄호 ()를 사용하여 부분 패턴을 그룹화합니다. match.group() 함수를 사용하여 추출된 패턴을 확인합니다.
-패턴 대체: re.sub() 함수를 사용하여 주어진 텍스트에서 패턴을 찾아 다른 문자열로 대체합니다.
+- 패턴 매칭: re.search() 함수를 사용하여 주어진 텍스트에서 패턴을 검사합니다. 매칭 결과를 반환하고 매칭 여부를 확인합니다.
+- 패턴 추출: 괄호 ()를 사용하여 부분 패턴을 그룹화합니다. match.group() 함수를 사용하여 추출된 패턴을 확인합니다.
+- 패턴 대체: re.sub() 함수를 사용하여 주어진 텍스트에서 패턴을 찾아 다른 문자열로 대체합니다.
+
+
+## 파이썬에서의 정규화 사용 예제
+
+파이썬에서는 `re` 모듈을 통해 정규 표현식을 사용할 수 있습니다. 아래는 파이썬에서 정규 표현식을 사용하는 예제입니다
+
+```python
+import re
+# 이메일 주소 유효성 검사
+pattern = r"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
+email = "example@example.com"
+if re.match(pattern, email):
+    print("유효한 이메일 주소입니다.")
+else:
+    print("유효하지 않은 이메일 주소입니다.")
+
+# 전화번호 추출
+pattern = r"\d{3}-\d{4}-\d{4}"
+text = "고객센터: 010-1234-5678"
+phone_numbers = re.findall(pattern, text)
+print("추출된 전화번호:")
+for number in phone_numbers:
+    print(number)
+
+# 태그 제거
+pattern = r"<[^>]+>"
+html = "<h1>제목</h1><p>본문입니다.</p>"
+removed_tags = re.sub(pattern, "", html)
+print("태그 제거 결과:")
+print(removed_tags)
+
+- 이메일 주소 유효성 검사: 입력된 이메일 주소가 유효한 형식인지 확인합니다.
+- 전화번호 추출: 주어진 텍스트에서 전화번호 패턴을 추출합니다.
+- 태그 제거: HTML 태그를 제거하여 태그 없는 텍스트를 얻습니다.
 
