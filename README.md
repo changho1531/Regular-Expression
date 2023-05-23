@@ -47,3 +47,10 @@ text = "I have an apple"  # 텍스트에서 패턴을 대체할 문자열
 replaced_text = re.sub(pattern, "orange", text)  # 정규 표현식과 문자열을 비교하여 패턴을 대체
 print(replaced_text)
 '''
+
+```python
+def greet():
+print("Hello, World!")
+
+greet()
+```
